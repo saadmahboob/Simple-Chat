@@ -3,8 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Simple Chat</title>
+	<script data-main="js/index" src="js/libs/requirejs-2.1.9.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
 </head>
 <body>
-	
+	<div id="main" class="container" ng-controller="mainCtrl">
+		<h2>
+			A Title here... Or not ?
+		</h2>
+		<div ng-view></div>
+	</div>
 </body>
 </html>

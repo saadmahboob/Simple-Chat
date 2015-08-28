@@ -46,16 +46,24 @@ module.exports = function(grunt) {
           src: [ 'build' ]
         },
         stylesheets: {
-          src: [ 'build/css/*.css', '!build/css/main.min.css' ]
+          src: [ 'build/css/main.css', '!build/css/main.min.css' ]
         },
         js: {
-          src: [ 'build/js/**/*.js', '!build/js/views/views.js', '!build/js/controllers/controllers.js'  ]
+          src: [ 
+          'build/js/**/*.js', 
+          '!build/js/views/views.js', 
+          '!build/js/controllers/controllers.js', 
+          '!build/js/libs/**', 
+          '!build/js/plugins/**',
+          '!build/js/app.js',
+          '!build/js/main.js',
+          '!build/js/index.js'  ]
         },
       },
       cssmin: {//minify css in build 
         build: {
           files: {
-            'build/css/main.min.css': [ 'build/css/**.css' ]
+            'build/css/main.min.css': [ 'build/css/main.css' ]
           }
         }
       },
@@ -66,7 +74,10 @@ module.exports = function(grunt) {
           },
           files: {
             'build/js/controllers/controllers.js': [ 'build/js/controllers/*.js' ],
-            'build/js/views/views.js': [ 'build/js/views/*.js' ]
+            'build/js/views/views.js': [ 'build/js/views/*.js' ],
+            'build/js/app.js': ['build/js/app.js'],
+            'build/js/main.js': ['build/js/main.js'],
+            'build/js/index.js': ['build/js/index.js'],
 
           }
         }
@@ -80,7 +91,7 @@ module.exports = function(grunt) {
           tasks: [ 'stylesheets' ]
         },
         js: {
-          files: ['js/controllers/*.js', 'js/views/*.js'],
+          files: ['js/**/*.js'],
           tasks: [ 'js' ]
         },
         copy: {
