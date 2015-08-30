@@ -4,13 +4,14 @@
 
 define(['angular',
 		'ngResource',
-		'ngRoute'], 
+		'ngRoute',
+    	'velocity'], 
 	function (angular) {
 	'use strict';
 
 	var simpleChat = angular.module('simpleChat',[
 												'ngResource', 
-												'ngRoute',]);
+												'ngRoute']);
 
 	simpleChat.config(function($locationProvider, $routeProvider) {
 		
@@ -23,7 +24,7 @@ define(['angular',
 
 	simpleChat.controller('mainCtrl', ['$scope', '$location', function($scope, $location) {
 			// Main controller
-console.log("test")
+			console.log(Velocity)
 				
 	}]);
 
